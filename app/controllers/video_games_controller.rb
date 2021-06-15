@@ -1,4 +1,5 @@
 class VideoGamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @video_games = VideoGame.all
     @video_games = policy_scope(VideoGame).order(created_at: :desc)
