@@ -6,11 +6,12 @@
 </div>
 <div class="container">
   <% @homepage_video_games.each do |video_game| %>
-  <div class="card">
-       <%= video_game.title %>
-       <%= video_game.plateform %>
-       <%= video_game.price %>€ per day
-       <%= video_game.category %>
-  </div>
+    <div class="card">
+      <%= video_game.title %>
+      <%= video_game.plateform %>
+      <%= video_game.price %>€ per day
+      <%= video_game.category %>
+    </div>
   <% end %>
 </div>
+<%= render partial: "card", locals: {title: "Pokemon Épée", price: 5, category: "RPG", plateform: "Switch"}  %>
