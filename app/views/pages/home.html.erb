@@ -5,13 +5,10 @@
   </div>
 </div>
 <div class="container">
-  <% @homepage_video_games.each do |video_game| %>
-    <div class="card">
-      <%= video_game.title %>
-      <%= video_game.plateform %>
-      <%= video_game.price %>€ per day
-      <%= video_game.category %>
-    </div>
-  <% end %>
+  <div class="row">
+    <% @homepage_video_games.each do |video_game| %>
+      <%= render partial: "card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform}  %>
+    <% end %>
+  </div>
 </div>
-<%= render partial: "card", locals: {title: "Pokemon Épée", price: 5, category: "RPG", plateform: "Switch"}  %>
+<%# <%= render partial: "card", locals: {title: @homepage_video_games[0].title, price: 5, category: "RPG", plateform: "Switch"}  %>
