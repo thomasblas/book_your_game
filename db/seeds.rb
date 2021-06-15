@@ -14,9 +14,9 @@ User.create!(email: "thom@email.com", nickname: "Thom", address: "SDF", password
 User.create!(email: "thomas@email.com", nickname: "Thomas", address: "1 Rue de Normandie", password: "123456")
 
 VideoGame.all.destroy_all
-VideoGame.create!(title: "League Of Legends", plateform: "PC", price: 2, user: User.first, available: true, category: "MOBA")
-VideoGame.create!(title: "WOW", plateform: "PC", price: 2, user: User.first, available: true, category: "MOBA")
-VideoGame.create!(title: "Rocket League", plateform: "PC", price: 2, user: User.last, available: true, category: "MOBA")
+VideoGame.create!(title: "League Of Legends", plateform: "PC", price: 2, user: User.first, available: true, category: "MOBA", photo: "https://theme.zdassets.com/theme_assets/43400/87a1ef48e43b8cf114017e3ad51b801951b20fcf.jpg")
+VideoGame.create!(title: "WOW", plateform: "PC", price: 2, user: User.first, available: true, category: "MMORPG", photo: "https://images-na.ssl-images-amazon.com/images/I/510Xjw4h8kS._AC_.jpg")
+VideoGame.create!(title: "Rocket League", plateform: "PS4", price: 2, user: User.last, available: true, category: "SPORT", photo: "https://i.jeuxactus.com/datas/jeux/r/o/rocket-league/xl/rocket-league-jaquette-5b290e6f64add.jpg")
 
 Rent.all.destroy_all
 Rent.create!(state: "Pending", user: User.last, video_game: VideoGame.first)
