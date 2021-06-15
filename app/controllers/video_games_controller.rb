@@ -13,12 +13,16 @@ class VideoGamesController < ApplicationController
 
   def new
     @video_game = VideoGame.new
+    authorize @video_game
   end
 
   def create
     video_game = VideoGame.new(video_game_params)
+    video_game.user = current_user
+    authorize video_game
+    # raise
     if video_game.save
-      redirect_to video_game_path(video_game)
+      redirect_to dashboard_path
     else
       render :new
     end

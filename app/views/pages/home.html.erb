@@ -5,9 +5,10 @@
   </div>
 </div>
 <div class="container">
+  <h1 class="mb-3">The last 3 games available</h1>
   <div class="row cards mb-3">
     <% @homepage_video_games.each do |video_game| %>
-      <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo}  %>
+      <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo, user: video_game.user}  %>
     <% end %>
   </div>
 </div>

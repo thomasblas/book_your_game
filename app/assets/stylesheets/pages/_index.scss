@@ -7,22 +7,24 @@ input {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-
   font-family: "Roboto", sans-serif;
 }
 
 :root {
   --bg-shape-color: linear-gradient(120deg, #343a4f, #0f1620);
-  --lightblue: #3d9dea;
-  --darkblue: #4a4eee;
-  --text-color: #d5e1ef;
+  // --lightblue: #3d9dea;
+  // --darkblue: #4a4eee;
+  --grey: #393e46;
+  --duck: #00adb5;
+  --text-color: #eeeeee;
 }
 
 html,
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(90deg, #414850, #131720);
+  background-color: #222831;
+  // background-image: linear-gradient(90deg, #414850, #131720);
   color: var(--text-color);
 }
 body {
