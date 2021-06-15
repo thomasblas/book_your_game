@@ -1,7 +1,3 @@
 <% @video_games.each do |video_game| %>
-<<<<<<< HEAD
-  <%= render "shared/card", locals: {title: video_game.title, plateform: video_game.plateform, price: video_game.price, photo: video_game.photo, category: video_game.category}  %>
-=======
-  <%= render "card", locals: {title: video_game.title, plateform: video_game.plateform, price: video_game.price, category: video_game.category}  %>
->>>>>>> daa4cfbc6801689fc4b1825e0a02830e54be43cd
+  <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo}  %>
 <% end %>
