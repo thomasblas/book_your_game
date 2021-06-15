@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+    <%= link_to "Book Your Game", root_path, class: "navbar-brand text-light"%>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-light" href="#">Dashboard</a>
+      </li>
+    </ul>
+    <form class="form-inline m-auto">
+      <input class="form-control" style="width: 250px" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary ml-2 my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    <div>
+      <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" type="submit">Sign In</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0 ml-2" type="submit">Sign Up</button>
+      <%# <button class="btn btn-outline-danger" type="submit">Log Out</button> %>
+    </div>
+  </div>
+</nav>
