@@ -1,3 +1,3 @@
 <% @video_games.each do |video_game| %>
-  <%= video_game.title %>
+  <%= render "card", locals: {title: video_game.title, plateform: video_game.plateform, price: video_game.price, category: video_game.category}  %>
 <% end %>
