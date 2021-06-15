@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <% @homepage_video_games.each do |video_game| %>
-      <%= render partial: "card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform}  %>
+      <%= render partial: "card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo}  %>
     <% end %>
   </div>
 </div>
