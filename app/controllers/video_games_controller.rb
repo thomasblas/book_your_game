@@ -1,7 +1,4 @@
 class VideoGamesController < ApplicationController
-  include Pundit
-  after_action :verify_authorized, except: :index
-
   def index
     @video_games = VideoGame.all
     @video_games = policy_scope(VideoGame).order(created_at: :desc)
