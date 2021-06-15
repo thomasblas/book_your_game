@@ -24,7 +24,7 @@ html,
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: #222831;
+  background-color: var(--dark);
   // background-image: linear-gradient(90deg, #414850, #131720);
   color: var(--text-color);
 }

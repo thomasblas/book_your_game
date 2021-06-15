@@ -160,14 +160,13 @@ h1 {
 .checkoutButton {
   display: flex;
   width: 100%;
-  background-image: var(--bg-shape-color);
+  background-color: var(--dark);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: -2px -2px 2px 0px rgba(80, 80, 80, 0.1), 2px 2px 3px 0px rgba(12, 12, 12, 0.3),
     inset 0px 0px 0px 2px rgba(80, 80, 80, 0.2);
   margin-top: 30px;
   padding: 14px;
-
   justify-content: space-between;
   align-items: center;
 }
@@ -179,8 +178,9 @@ h1 {
 }
 
 .priceTag span {
-  color: #488dc7;
-  font-size: 20px;
+  color: var(--duck);
+  font-size: 25px;
+  margin-right: 5px;
 }
 
 /* checkout button*/
