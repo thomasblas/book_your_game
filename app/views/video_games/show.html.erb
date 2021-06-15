@@ -1,3 +1,3 @@
 <h1>More infos about <%= @video_game.title  %></h1>
 
-<%= render "shared/card", locals: {title: @video_game.title, plateform: @video_game.plateform, price: @video_game.price, photo: @video_game.photo, available: @video_game.available, category: @video_game.category}  %>
+<%= render "card", locals: {title: @video_game.title, plateform: @video_game.plateform, price: @video_game.price, category: @video_game.category}  %>
