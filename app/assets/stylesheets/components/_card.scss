@@ -3,7 +3,9 @@
 .wrapper {
   width: 350px;
   border-radius: 40px;
-  background-image: var(--bg-shape-color);
+  // background-image: var(--bg-shape-color);
+  background-color: var(--dark);
+  border: 1px solid var(--grey);
   overflow: hidden;
 }
 .overviewInfo,
@@ -25,7 +27,7 @@
     display: block;
     width: 8px;
     height: 8px;
-    background-image: linear-gradient(90deg, #489be2, #0f629c);
+    background-image: linear-gradient(90deg, var(--text-color), var(--duck));
     border-radius: 50%;
     position: absolute;
     top: 11px;
@@ -189,7 +191,8 @@ button.preorder {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: linear-gradient(85deg, #61c7ef, #4833fb);
+  // background-image: linear-gradient(85deg, #61c7ef, #4833fb);
+  background-image: linear-gradient(85deg, var(--duck), var(--grey));
   color: white;
 }
 

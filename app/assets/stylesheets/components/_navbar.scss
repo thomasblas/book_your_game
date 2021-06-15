@@ -1,3 +1,22 @@
+.navbar {
+  background-color: var(--grey);
+  .btn-outline-primary {
+    color: var(--duck);
+    border-color: var(--duck) !important;
+  }
+  .btn-outline-primary:hover {
+    color: var(--text-color);
+    background-color: var(--duck) !important;
+  }
+  .btn-outline-primary:active,
+  .btn-outline-primary:focus {
+    color: var(--duck);
+    background-color: var(--duck) !important;
+    border-color: var(--duck) !important;
+    box-shadow: 0 0 0 0.2rem var(--duck) !important;
+  }
+}
+
 .search-bar {
   width: 250px;
 }

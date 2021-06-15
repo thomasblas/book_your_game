@@ -10,11 +10,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <% if user_signed_in? %>
-      YES JE SUIS LOG
-    <% else %>
-      NO JE NE SUIS PAS LOG
-    <% end %>
     <%= render "shared/navbar" %>
     <div class="container">
       <%= yield %>
