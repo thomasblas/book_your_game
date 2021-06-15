@@ -8,7 +8,7 @@
 
 
 User.all.destroy_all
-User.create!(email: "admin@email.com", nickname: "Admin", address: "165 avenue de Bretagne", password: "123456")
+User.create!(email: "admin@email.com", nickname: "Admin", address: "165 avenue de Bretagne", password: "123456", admin: true)
 User.create!(email: "christian@email.com", nickname: "Christian", address: "165 avenue de Bretagne", password: "123456")
 User.create!(email: "thom@email.com", nickname: "Thom", address: "SDF", password: "123456")
 User.create!(email: "thomas@email.com", nickname: "Thomas", address: "1 Rue de Normandie", password: "123456")
