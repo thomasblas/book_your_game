@@ -9,9 +9,9 @@
 
 User.all.destroy_all
 User.create!(email: "admin@email.com", nickname: "Admin", address: "165 avenue de Bretagne", password: "123456", admin: true)
-User.create!(email: "christian@email.com", nickname: "Christian", address: "165 avenue de Bretagne", password: "123456")
-User.create!(email: "tom@email.com", nickname: "Tom", address: "SDF", password: "123456")
-User.create!(email: "thomas@email.com", nickname: "Thomas", address: "1 Rue de Normandie", password: "123456")
+User.create!(email: "christian@email.com", nickname: "Christian", address: "165 avenue de Bretagne", password: "123456", photo: "https://avatars.githubusercontent.com/u/41517143?v=4")
+User.create!(email: "tom@email.com", nickname: "Tom", address: "SDF", password: "123456", photo: "https://avatars.githubusercontent.com/u/78411645?s=400&u=1ce42e1ea012c80c0d39f1267c491571e4a5a147&v=4")
+User.create!(email: "thomas@email.com", nickname: "Thomas", address: "1 Rue de Normandie", password: "123456", photo: "https://avatars.githubusercontent.com/u/82810122?v=4")
 
 VideoGame.all.destroy_all
 VideoGame.create!(title: "League Of Legends", plateform: "PC", price: 3, user: User.first, available: true, category: "MOBA", photo: "https://theme.zdassets.com/theme_assets/43400/87a1ef48e43b8cf114017e3ad51b801951b20fcf.jpg")

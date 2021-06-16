@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
   get '/dashboard/new', to: 'video_games#new', as: "new_video_game"
   post '/dashboard/new', to: 'video_games#create', as: "create_video_game"
+  post 'rents', to: 'rents#create', as: "new_rent"
 end
