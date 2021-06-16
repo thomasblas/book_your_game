@@ -20,7 +20,6 @@ class VideoGamesController < ApplicationController
     video_game = VideoGame.new(video_game_params)
     video_game.user = current_user
     authorize video_game
-    # raise
     if video_game.save
       redirect_to dashboard_path
     else

@@ -8,8 +8,15 @@
   <h1 class="mb-3">The last 3 games available</h1>
   <div class="row cards mb-3">
     <% @homepage_video_games.each do |video_game| %>
-      <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo, user: video_game.user}  %>
+      <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo, user: video_game.user, id: video_game.id}  %>
     <% end %>
   </div>
 </div>
-<%# <%= render partial: "card", locals: {title: @homepage_video_games[0].title, price: 5, category: "RPG", plateform: "Switch"}  %>
+<% if params[:new_rent] %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    Rent ok !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
