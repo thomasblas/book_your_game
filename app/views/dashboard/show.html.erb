@@ -3,30 +3,13 @@
   <%= image_tag "#{current_user.photo}", class: "avatar-large", alt: "#{current_user.nickname}" %>
 </div>
 <div>
-  <button class="preorder">
-    <p>Add a new game</p>
-    <div class="buttonaction">
-      <svg
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-        <path
-    d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
-    fill="currentColor"
-  />
-        </svg>
-      </div>
-    </button>
-  </div>
-  <%= link_to "new_video_game", new_video_game_path %>
-  <h2>My games</h2>
-  <% @games.each do |game| %>
-    <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available}  %>
-  <% end %>
-  <h2>My rents</h2>
-  <% @rents.each do |rent|  %>
-    <p><%= "#{rent.video_game.title} from #{rent.video_game.user.nickname}" %></p>
-  <% end %>
+  <%= link_to "new_video_game", new_video_game_path, class: "preorder" %>
+</div>
+<h2>My games</h2>
+<% @games.each do |game| %>
+  <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available}  %>
+<% end %>
+<h2>My rents</h2>
+<% @rents.each do |rent|  %>
+  <p><%= "#{rent.video_game.title} from #{rent.video_game.user.nickname}" %></p>
+<% end %>

@@ -196,6 +196,24 @@ button.preorder {
   color: white;
 }
 
+.preorder {
+  display: inline-block !important;
+  outline: 0;
+  border: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  overflow: hidden;
+  // background-image: linear-gradient(85deg, #61c7ef, #4833fb);
+  background-image: linear-gradient(85deg, var(--duck), var(--grey));
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .preorder p {
   padding: 8px 17px;
   border-right: 1px solid rgba(0, 0, 0, 0.4);
