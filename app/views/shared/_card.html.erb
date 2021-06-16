@@ -62,16 +62,37 @@
         <span>€</span><%= price %>
       </div>
       <% if user_signed_in? %>
-        <%= simple_form_for :rent, :url => new_rent_path do |f| %>
+        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal"  data-game=<%= title %>>
+          <p>Rent Now !</p>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
           <%= f.input :video_game_id, :as => :hidden, input_html: {value: id}, style: "display:none;" %>
           <%= f.input :user_id, :as => :hidden, input_html: {value: current_user.id}, style: "display:none;" %>
           <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
           <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
-          <button type="submit" class="preorder">
-            <p>Rent Now !</p>
-          </button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="preorder">
+              <p>Rent Now !</p>
+            </button>
+          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

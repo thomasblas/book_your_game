@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { initToast } from '../components/init_toast';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initModal } from "../components/modal"
 
 
 // Internal imports, e.g:
@@ -36,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
   initToast();
+  initModal();
 });
