@@ -1,5 +1,11 @@
 .navbar {
-  background-color: var(--grey);
+  background-color: #393E46;
+  position:fixed;
+  top:0;
+  left:0; 
+  width:100%;
+  opacity: 1;
+  z-index: 999;
   .btn-outline-primary {
     color: var(--duck);
     border-color: var(--duck) !important;
