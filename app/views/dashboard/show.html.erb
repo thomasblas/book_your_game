@@ -9,7 +9,14 @@
 <% @games.each do |game| %>
   <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available}  %>
 <% end %>
-<h2>My rents</h2>
+<h2>My pending demands</h2>
+<% case @user.id %>
+<% when @video-game.user_id %>
 <% @rents.each do |rent|  %>
-  <p><%= "#{rent.video_game.title} from #{rent.video_game.user.nickname}" %></p>
+  <%= render partial: "shared/card-pendings", locals: {photo: rent.video_game.photo, title: rent.video_game.title, available: rent.video_game.available}  %>
+  <h2>My rents</h2>
+<% else %>
+<% @rents.each do |rent|  %>
+  <%= render partial: "shared/card-my-rents", locals: {photo: rent.video_game.photo, title: rent.video_game.title, available: rent.video_game.available}  %>
 <% end %>
+
