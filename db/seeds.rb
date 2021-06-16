@@ -18,6 +18,8 @@ VideoGame.create!(title: "League Of Legends", plateform: "PC", price: 3, user: U
 VideoGame.create!(title: "WOW", plateform: "PC", price: 4.5, user: User.first, available: true, category: "MMORPG", photo: "https://images-na.ssl-images-amazon.com/images/I/510Xjw4h8kS._AC_.jpg")
 VideoGame.create!(title: "Rocket League", plateform: "PS4", price: 2, user: User.last, available: true, category: "SPORT", photo: "https://i.jeuxactus.com/datas/jeux/r/o/rocket-league/xl/rocket-league-jaquette-5b290e6f64add.jpg")
 VideoGame.create!(title: "Dead or Alive 2", plateform: "Dreamcast", price: 8, user: User.find_by(nickname: "Tom"), available: true, category: "Versus Fighting", photo: "https://upload.wikimedia.org/wikipedia/en/d/d6/Dead_or_Alive_2_cover_art.png")
+VideoGame.create!(title: "Goldeneye", plateform: "Nintendo 64", price: 7, user: User.first, available: true, category: "FPS", photo: "https://images-na.ssl-images-amazon.com/images/I/51oR2K7sgDL._AC_.jpg")
+VideoGame.create!(title: "Pokemon blue", plateform: "Game Boy", price: 9, user: User.first, available: true, category: "JRPG", photo: "https://images-na.ssl-images-amazon.com/images/I/61%2B86dqSzlL._AC_SX466_.jpg")
 
 Rent.all.destroy_all
 Rent.create!(state: "Pending", user: User.last, video_game: VideoGame.first)
