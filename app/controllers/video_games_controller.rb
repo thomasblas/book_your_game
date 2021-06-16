@@ -19,6 +19,7 @@ class VideoGamesController < ApplicationController
   def create
     video_game = VideoGame.new(video_game_params)
     video_game.user = current_user
+    video_game.available = true
     authorize video_game
     if video_game.save
       redirect_to dashboard_path
