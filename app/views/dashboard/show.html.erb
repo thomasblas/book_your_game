@@ -2,9 +2,10 @@
 <%= link_to "new_video_game", new_video_game_path %>
 <h2>My games</h2>
 <% @games.each do |game| %>
-  <p><%= game.title %></p>
+<%= render "shared/card-dashboard" %>
 <% end %>
 <h2>My rents</h2>
 <% @rents.each do |rent|  %>
   <p><%= "#{rent.video_game.title} from #{rent.video_game.user.nickname}" %></p>
 <% end %>
+
