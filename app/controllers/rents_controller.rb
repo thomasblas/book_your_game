@@ -16,6 +16,6 @@ class RentsController < ApplicationController
   private
 
   def rent_params
-    params.require(:rent).permit(:video_game_id, :user_id)
+    params.require(:rent).permit(:video_game_id, :user_id, :rent_start_at, :rent_end_at)
   end
 end
