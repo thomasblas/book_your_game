@@ -37,8 +37,9 @@ class VideoGamesController < ApplicationController
   def update
     id = params[:id]
     @video_game = VideoGame.find(id)
+    authorize @video_game
     @video_game.update(video_game_params)
-    redirect_to video_game_path(@video_game)
+    redirect_to dashboard_path
   end
 
   def destroy
