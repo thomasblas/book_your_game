@@ -1,4 +1,30 @@
-<h1>Dashboard#show</h1>
+<div class="dashboard_banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn-techno.konbini.com/fr/files/2020/12/popcornfeat.jpg?ratio=16:9&w=640);">
+    <div>
+      <h1><%= current_user.nickname %>'dashboard</h1>
+    </div>
+    <div>
+      <%= image_tag "#{current_user.photo}", class: "avatar-large", alt: "#{current_user.nickname}" %>
+    </div>
+</div>
+<div>
+  <button class="preorder">
+        <p>Add a new game</p>
+        <div class="buttonaction">
+          <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+            <path
+    d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+    fill="currentColor"
+  />
+            </svg>
+          </div>
+        </button>
+</div>
 <%= link_to "new_video_game", new_video_game_path %>
 <h2>My games</h2>
 <% @games.each do |game| %>
