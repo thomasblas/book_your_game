@@ -79,20 +79,22 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
-          <%= f.input :video_game_id, :as => :hidden, input_html: {value: id}, style: "display:none;" %>
-          <%= f.input :user_id, :as => :hidden, input_html: {value: current_user.id}, style: "display:none;" %>
-          <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
-          <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="preorder">
-              <p>Rent Now !</p>
-            </button>
-          </div>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="modal-body">
+          <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
+            <%= f.input :video_game_id, :as => :hidden, input_html: {value: id}, style: "display:none;" %>
+            <%= f.input :user_id, :as => :hidden, input_html: {value: current_user.id}, style: "display:none;" %>
+            <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
+            <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="preorder">
+                <p>Rent Now !</p>
+              </button>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

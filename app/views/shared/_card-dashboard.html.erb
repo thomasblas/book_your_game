@@ -5,12 +5,11 @@
   <div class="card-product-infos">
     <h2><%= title %></h2>
     <p><strong><%= available %></strong></p>
-    
-                <i class="fas fa-trash-alt"><%= link_to "Remove", 
+    <i class="fas fa-trash-alt"><%= link_to "Remove",
                 video_game_path(VideoGame.find_by(id: id)),
                 method: :delete,
                 data: {confirm: "Are you sure ?"}  %></i>
-                <i class="fas fa-edit"><%= link_to "Edit",
+    <i class="fas fa-edit"><%= link_to "Edit",
                 video_game_path(VideoGame.find_by(id: id)),
                 method: :edit %></i>
   </div>

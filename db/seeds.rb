@@ -22,5 +22,5 @@ VideoGame.create!(title: "Goldeneye", plateform: "Nintendo 64", price: 7, user: 
 VideoGame.create!(title: "Pokemon blue", plateform: "Game Boy", price: 9, user: User.first, available: true, category: "JRPG", photo: "https://images-na.ssl-images-amazon.com/images/I/61%2B86dqSzlL._AC_SX466_.jpg")
 
 Rent.all.destroy_all
-Rent.create!(state: "Pending", user: User.last, video_game: VideoGame.first)
-Rent.create!(state: "Pending", user: User.first, video_game: VideoGame.last)
+Rent.create!(state: "Pending", user: User.last, video_game: VideoGame.first, rent_start_at: "2021-06-15", rent_end_at: "2021-06-16")
+Rent.create!(state: "Pending", user: User.first, video_game: VideoGame.last, rent_start_at: "2021-06-15", rent_end_at: "2021-06-16")

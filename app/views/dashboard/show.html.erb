@@ -7,16 +7,14 @@
 </div>
 <h2>My games</h2>
 <% @games.each do |game| %>
-  <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available}  %>
+  <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available, id: game.id}  %>
 <% end %>
 <h2>My pending demands</h2>
-<% case @user.id %>
-<% when @video-game.user_id %>
-<% @rents.each do |rent|  %>
-  <%= render partial: "shared/card-pendings", locals: {photo: rent.video_game.photo, title: rent.video_game.title, available: rent.video_game.available}  %>
-  <h2>My rents</h2>
-<% else %>
+<% @pending_rents.each do |pending_rent| %>
+  <%= render partial: "shared/card-dashboard", locals: {photo: pending_rent.video_game.photo, title: pending_rent.video_game.title, available: pending_rent.video_game.available, id: pending_rent.video_game.id}  %>
+  <%# <%= render partial: "shared/card-pendings", locals: {photo: pending_rent.video_game.photo, title: pending_rent.video_game.title, available: pending_rent.video_game.available}  %>
+<% end %>
+<h2>My rents</h2>
 <% @rents.each do |rent|  %>
   <%= render partial: "shared/card-my-rents", locals: {photo: rent.video_game.photo, title: rent.video_game.title, available: rent.video_game.available}  %>
 <% end %>
-

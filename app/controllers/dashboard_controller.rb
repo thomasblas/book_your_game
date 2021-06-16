@@ -3,6 +3,8 @@ class DashboardController < ApplicationController
   def show
     @games = current_user.video_games
     @rents = current_user.rents
+    tmp = current_user.video_games.map { |vg| vg.id }
+    @pending_rents = Rent.where(video_game_id: tmp).where(state: "Pending")
     # raise
   end
 end
