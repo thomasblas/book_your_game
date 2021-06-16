@@ -10,7 +10,7 @@
                 method: :delete,
                 data: {confirm: "Are you sure ?"}  %></i>
     <i class="fas fa-edit"><%= link_to "Edit",
-                video_game_path(VideoGame.find_by(id: id)),
-                method: :edit %></i>
+                edit_video_game_path(VideoGame.find_by(id: id)),
+                method: :get %></i>
   </div>
 </div>

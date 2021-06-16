@@ -31,6 +31,7 @@ class VideoGamesController < ApplicationController
   def edit
     id = params[:id]
     @video_game = VideoGame.find(id)
+    authorize @video_game
   end
 
   def update
@@ -43,9 +44,10 @@ class VideoGamesController < ApplicationController
   def destroy
     id = params[:id]
     video_game = VideoGame.find(id)
+    authorize video_game
     # user_id = video_game.user_id
     video_game.destroy
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   private

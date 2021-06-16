@@ -20,4 +20,12 @@ class VideoGamePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    true
+  end
+
+  def edit?
+    true
+  end
 end
