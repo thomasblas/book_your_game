@@ -1,28 +1,38 @@
 <div class="wrapper p-0">
-  <div class="overviewInfo" style="background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)),url(<%= photo %>);background-size: cover;background-position:center;">
+  <div class="overviewInfo" style="background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2)),url(<%= photo %>);background-size: cover;background-position:center;">
+  </div>
+  <div class="productSpecifications" style=background-color:var(--grey)>
+    <h2 style=margin-bottom:15px;><%= title %></h2>
     <div class="actions">
-    </div>
+    
     <div class="productinfo">
-      <div class="grouptext">
-        <h3>PLATFORM</h3>
-        <p><%= plateform %></p>
-      </div>
-      <div class="grouptext">
-        <h3>CATEGORIE</h3>
-        <p><%= category %></p>
-      </div>
-      <div class="grouptext">
-        <h3>AVAILABLE</h3>
-        <p><%= available %></p>
-      </div>
       <div class="productImage">
         <img src="https://www.eclypsia.com/content/Nintendo/Switch/joycon01.png" alt="product: ps5 controller image" width="30px">
       </div>
+        <div>
+        <p><U>Platform</U> : <%= plateform %></p>
+        </div>
+        <div>
+        <p><U>Category</U> : <%= category %></p>
+        </div>
+        <div>
+        <p><U>Availability</U> : <%= available %></p>
+        </div>
+        <p class="m-0" style=margin-bottom:10px;> <I><%= "Provided by: " %><%= user.nickname %></I></p>
+      </div>
+      <div class="checkoutButton" style=background-color:var(--grey)>
+      <div class="priceTag">
+        <span>€</span><%= price %> <%= " / Day" %>
+      </div>
+      <% if user_signed_in? %>
+        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= title %>" data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
+          <p>Rent Now !</p>
+        </button>
+      <% end %>
     </div>
   </div>
-  <div class="productSpecifications">
-    <p class="m-0"><%= user.nickname %></p>
-    <h2><%= title %></h2>
+</div>
+    </div>
     <%# <div class="productFeatures">
               <div class="feature">
                 <div class="featureIcon">
@@ -57,18 +67,6 @@
                 </div>
               </div>
             </div> %>
-    <div class="checkoutButton">
-      <div class="priceTag">
-        <span>€</span><%= price %>
-      </div>
-      <% if user_signed_in? %>
-        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= title %>" data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
-          <p>Rent Now !</p>
-        </button>
-      <% end %>
-    </div>
-  </div>
-</div>
 <!-- Modal -->
 <div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
