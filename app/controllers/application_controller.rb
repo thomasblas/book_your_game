@@ -15,8 +15,12 @@ class ApplicationController < ActionController::Base
   # end
 
   def pending_rent
-    tmp = current_user.video_games.map { |vg| vg.id }
-    @pending_rents = Rent.where(video_game_id: tmp).where(state: "Pending")
+    if current_user
+      tmp = current_user.video_games.map { |vg| vg.id }
+      @pending_rents = Rent.where(video_game_id: tmp).where(state: "Pending")
+    else
+      @pending_rents = []
+    end
   end
 
   private
