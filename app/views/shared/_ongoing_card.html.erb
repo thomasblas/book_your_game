@@ -1,0 +1,16 @@
+<div class="card-pending-product">
+  <% if game.photo %>
+    <img src=<%= game.photo %> />
+  <% end %>
+  <div class="card-pending-product-infos">
+    <div class="">
+      <p>Owner: <%= rent.user.nickname %> | <span class="state state-valide"></span><%= rent.state %></p>
+      <h2><%= game.title %> <span>(<%= rent.rent_start_at.strftime("%A %b %d") %> - <%= rent.rent_end_at.strftime("%A %b %d") %>)</span></h2>
+      <div class="d-flex">
+        <p class="mr-4"><b>Plateform:</b> <%= game.plateform %></p>
+        <p><b>Category:</b> <%= game.category %></p>
+      </div>
+      <p><b>Total:</b> <%= game.price * (rent.rent_end_at - rent.rent_start_at) %>€</p>
+    </div>
+  </div>
+</div>
