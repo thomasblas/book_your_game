@@ -45,7 +45,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <% if @pending_rents %>
+          <% @pending_rents.each do |rent| %>
+            <%= rent.video_game.title %>
+          <% end %>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-close-modal" data-dismiss="modal">Close</button>

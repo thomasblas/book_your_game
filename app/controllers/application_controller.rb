@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :pending_rent
   include Pundit
 
   # Pundit: white-list approach.
@@ -12,6 +13,11 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+
+  def pending_rent
+    tmp = current_user.video_games.map { |vg| vg.id }
+    @pending_rents = Rent.where(video_game_id: tmp).where(state: "Pending")
+  end
 
   private
 
