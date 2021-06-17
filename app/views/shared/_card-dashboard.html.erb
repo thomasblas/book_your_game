@@ -6,13 +6,11 @@
     <h2><%= game.title %></h2>
     <p><%= game.plateform %></p>
     <p><%= game.price %>€ per day</p>
-    <i class="fas fa-trash-alt"><%= link_to " Remove This Game",
-                video_game_path(VideoGame.find_by(id: game.id)),
-                method: :delete,
-                data: {confirm: "Are you sure ?"}, style:"text-decoration:none; color: var(--text-color); font-weight: lighter"  %></i>
-    <i class="fas fa-edit"><%= link_to " Edit This Game",
-                edit_video_game_path(VideoGame.find_by(id: game.id)),style:"text-decoration:none; color: var(--text-color)",
-                method: :get %></i>
-    </div>
+    <%= link_to video_game_path(VideoGame.find_by(id: game.id)), method: :delete, data: {confirm: "Are you sure ?"} do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+    <%= link_to edit_video_game_path(VideoGame.find_by(id: game.id)) do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
   </div>
 </div>

@@ -1,0 +1,43 @@
+.card-pending-product {
+  overflow: hidden;
+  height: 150px;
+  background: var(--grey);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+
+.card-pending-product img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-pending-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.card-pending-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.7;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.card-pending-product .card-pending-product-infos {
+  padding: 16px;
+}
+
+.card-pending-product-infos {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

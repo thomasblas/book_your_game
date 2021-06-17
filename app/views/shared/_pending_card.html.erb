@@ -1,0 +1,24 @@
+<div class="card-pending-product">
+  <% if game.photo %>
+    <img src=<%= game.photo %> />
+  <% end %>
+  <div class="card-pending-product-infos">
+    <div class="">
+      <p>Renter: <%= rent.user.nickname %> | <span class="state state-pending"></span>Pending</p>
+      <h2><%= game.title %> <span>(<%= rent.rent_start_at.strftime("%A %b %d") %> - <%= rent.rent_end_at.strftime("%A %b %d") %>)</span></h2>
+      <div class="d-flex">
+        <p class="mr-4"><b>Plateform:</b> <%= game.plateform %></p>
+        <p><b>Category:</b> <%= game.category %></p>
+      </div>
+      <p><b>Total:</b> <%= game.price * (rent.rent_end_at - rent.rent_start_at) %>€</p>
+    </div>
+    <div class="d-flex">
+      <%= link_to accept_rent_path(Rent.find_by(id: rent.id)), style: "font-size: 40px;margin-right: 16px;", class: "text-success" do %>
+        <i class="fas fa-check"></i>
+      <% end %>
+      <%= link_to decline_rent_path(Rent.find_by(id: rent.id)), style: "font-size: 40px", class: "text-danger" do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
