@@ -1,6 +1,6 @@
 <div class="dashboard_banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn-techno.konbini.com/fr/files/2020/12/popcornfeat.jpg?ratio=16:9&w=640);">
   <h1 class="mb-3"><%= current_user.nickname %>'dashboard</h1>
-  <% if current_user.photo %>
+  <% if !current_user.photo %>
     <%= cl_image_tag "uglek2cuyv1zkm24gboo" , class: "avatar-large", alt: "#{current_user.nickname}" %>
   <% else %>
     <%= cl_image_tag current_user.photo.key, class: "avatar-large", alt: "#{current_user.nickname}" %>
