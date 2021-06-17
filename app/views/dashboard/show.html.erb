@@ -1,20 +1,17 @@
 <div class="dashboard_banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn-techno.konbini.com/fr/files/2020/12/popcornfeat.jpg?ratio=16:9&w=640);">
-  <h1 class="mb-3"><%= current_user.nickname %>'dashboard</h1>
+  <h1 class="mb-3"><%= current_user.nickname %>'s Dashboard</h1>
   <%= image_tag "#{current_user.photo}", class: "avatar-large", alt: "#{current_user.nickname}" %>
 </div>
 <div>
-  <%= link_to "new_video_game", new_video_game_path, class: "preorder" %>
+  <%= link_to "Add One Of Your Game", new_video_game_path, class: "preorder" %>
 </div>
-<h2>My games</h2>
+<div>
+<h2>My Games</h2>
 <% @games.each do |game| %>
-  <%= render partial: "shared/card-dashboard", locals: {photo: game.photo, title: game.title, available: game.available, id: game.id}  %>
+  <%= render partial: "shared/card-dashboard", locals: {game: game}  %>
 <% end %>
-<h2>My pending demands</h2>
-<% @pending_rents.each do |pending_rent| %>
-  <%= render partial: "shared/card-dashboard", locals: {photo: pending_rent.video_game.photo, title: pending_rent.video_game.title, available: pending_rent.video_game.available, id: pending_rent.video_game.id}  %>
-  <%# <%= render partial: "shared/card-pendings", locals: {photo: pending_rent.video_game.photo, title: pending_rent.video_game.title, available: pending_rent.video_game.available}  %>
-<% end %>
-<h2>My rents</h2>
+<h2>My Ongoing Rents</h2>
 <% @rents.each do |rent|  %>
   <%= render partial: "shared/card-my-rents", locals: {photo: rent.video_game.photo, title: rent.video_game.title, available: rent.video_game.available}  %>
 <% end %>
+</div>

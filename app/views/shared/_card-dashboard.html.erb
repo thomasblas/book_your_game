@@ -1,16 +1,18 @@
 <div class="card-product">
-  <% if photo %>
-    <img src=<%= photo %> />
+  <% if game.photo %>
+    <img src=<%= game.photo %> />
   <% end %>
   <div class="card-product-infos">
-    <h2><%= title %></h2>
-    <p><strong><%= available %></strong></p>
-    <i class="fas fa-trash-alt"><%= link_to "Remove",
-                video_game_path(VideoGame.find_by(id: id)),
+    <h2><%= game.title %></h2>
+    <p><%= game.plateform %></p>
+    <p><%= game.price %>€ per day</p>
+    <i class="fas fa-trash-alt"><%= link_to " Remove This Game",
+                video_game_path(VideoGame.find_by(id: game.id)),
                 method: :delete,
-                data: {confirm: "Are you sure ?"}  %></i>
-    <i class="fas fa-edit"><%= link_to "Edit",
-                edit_video_game_path(VideoGame.find_by(id: id)),
+                data: {confirm: "Are you sure ?"}, style:"text-decoration:none; color: var(--text-color); font-weight: lighter"  %></i>
+    <i class="fas fa-edit"><%= link_to " Edit This Game",
+                edit_video_game_path(VideoGame.find_by(id: game.id)),style:"text-decoration:none; color: var(--text-color)",
                 method: :get %></i>
+    </div>
   </div>
 </div>
