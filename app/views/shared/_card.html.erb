@@ -62,7 +62,7 @@
         <span>€</span><%= price %>
       </div>
       <% if user_signed_in? %>
-        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal"  data-game=<%= title %>>
+        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game=<%= title %> data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
           <p>Rent Now !</p>
         </button>
       <% end %>
@@ -82,8 +82,8 @@
       <% if user_signed_in? %>
         <div class="modal-body">
           <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
-            <%= f.input :video_game_id, :as => :hidden, input_html: {value: id}, style: "display:none;" %>
-            <%= f.input :user_id, :as => :hidden, input_html: {value: current_user.id}, style: "display:none;" %>
+            <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
+            <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
             <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
             <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
             <div class="modal-footer">
