@@ -13,6 +13,20 @@ class RentsController < ApplicationController
     end
   end
 
+  def accept
+    rent = Rent.find(params[:id])
+    authorize rent
+    rent.update(state: "Accepted")
+    redirect_to dashboard_path
+  end
+
+  def decline
+    rent = Rent.find(params[:id])
+    authorize rent
+    rent.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def rent_params
