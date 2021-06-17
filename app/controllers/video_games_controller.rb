@@ -1,8 +1,12 @@
 class VideoGamesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @video_games = VideoGame.all
-    @video_games = policy_scope(VideoGame).order(created_at: :desc)
+    if params[:query].present?
+      @video_games = VideoGame.search_by_title_plateform_category(params[:query])
+    else
+      @video_games = VideoGame.all
+    end
+      @video_games = policy_scope(VideoGame).order(created_at: :desc)
   end
 
   def show

@@ -9,10 +9,20 @@
         <% end %>
       </li>
     </ul>
-    <form class="form-inline m-auto">
-      <input class="form-control search-bar my-rounded" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary btn-outline-duck ml-2 my-2 my-sm-0 my-rounded" type="submit"><i class="fas fa-search"></i></button>
-    </form>
+    <div>
+    <!-- <form class="form-inline m-auto"> -->
+      <!-- <input class="form-control search-bar my-rounded" type="search" placeholder="Find your game" aria-label="Search"> -->
+      <%= form_tag video_games_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-bar my-rounded",
+          placeholder: "Find your game"
+        %>
+        <%= submit_tag "Search", class: "btn btn-outline-primary btn-outline-duck ml-2 my-2 my-sm-0 my-rounded" %>
+      <% end %>
+      <!-- <button class="btn btn-outline-primary btn-outline-duck ml-2 my-2 my-sm-0 my-rounded" type="submit"><i class="fas fa-search"></i></button> -->
+    <!-- </form> -->
+    </div>
     <div>
       <% if user_signed_in? %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger my-rounded" %>
