@@ -13,7 +13,7 @@
   padding: 24px;
 }
 .overviewInfo {
-  height : 324px;
+  height: 324px;
 }
 .actions {
   // display: flex;
@@ -114,7 +114,6 @@ h1 {
   font-family: "Michroma", sans-serif;
 }
 .grouptext {
-  
   h3 {
     letter-spacing: 3.2px;
     font-size: 14px;
@@ -200,9 +199,9 @@ button.preorder {
   opacity: 0.8;
 }
 
-.preorder:hover{
+.preorder:hover {
   opacity: 1;
-  font-weight: bolder;
+  // font-weight: bolder;
 }
 
 .preorder {
