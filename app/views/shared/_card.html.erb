@@ -4,7 +4,6 @@
   <div class="productSpecifications" style=background-color:var(--grey)>
     <h2 style=margin-bottom:15px;><%= video_game.title %></h2>
     <div class="actions">
-    
     <div class="productinfo">
       <div class="productImage">
         <img  src= '<%= @joysticks[video_game.plateform]%>',  alt="", width="30px">
@@ -31,9 +30,7 @@
       <% end %>
     </div>
   </div>
-</div>
-    </div>
-    <%# <div class="productFeatures">
+  <%# <div class="productFeatures">
               <div class="feature">
                 <div class="featureIcon">
                 </div>
@@ -91,8 +88,24 @@
               </button>
             </div>
           <% end %>
+
         </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="modal-body">
+            <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
+              <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
+              <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
+              <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
+              <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
+              <div class="modal-footer">
+                <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                <button type="submit" class="preorder">
+                  <p>Rent Now !</p>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

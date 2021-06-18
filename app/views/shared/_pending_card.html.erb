@@ -1,6 +1,8 @@
 <div class="card-pending-product">
-  <% if game.photo %>
-    <img src=<%= game.photo %> />
+  <% if game.photo.present? %>
+    <%= cl_image_tag game.photo.key, height: 150, width: 150, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag "rar7ij31rdt35519xbe2x3thlbj9", height: 150, width: 150, crop: :fill %>
   <% end %>
   <div class="card-pending-product-infos">
     <div class="">
