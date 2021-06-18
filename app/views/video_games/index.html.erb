@@ -1,6 +1,9 @@
-<h1 class="my-3">Choose your game</h1>
-<div class="row cards mb-3 text-center">
-  <% @video_games.each do |video_game| %>
-    <%= render partial: "shared/card", locals: {title: video_game.title, price: video_game.price, category: video_game.category, plateform: video_game.plateform, photo: video_game.photo, available: video_game.available, user: video_game.user, id: video_game.id}  %>
-  <% end %>
+
+<div class="container">
+<h1>Choose your game</h1>
+<div class="row cards mb-3">
+<% @video_games.each do |video_game| %>
+  <%= render "shared/card", video_game: video_game %>
+<% end %>
+</div>
 </div>
