@@ -4,36 +4,35 @@
   <div class="productSpecifications" style=background-color:var(--grey)>
     <h2 style=margin-bottom:15px;><%= title %></h2>
     <div class="actions">
-    
-    <div class="productinfo">
-      <div class="productImage">
-        <img src="https://www.eclypsia.com/content/Nintendo/Switch/joycon01.png" alt="product: ps5 controller image" width="30px">
-      </div>
-        <div>
-        <p><U>Platform</U> : <%= plateform %></p>
+      <div class="productinfo">
+        <div class="productImage">
+          <img src="https://www.eclypsia.com/content/Nintendo/Switch/joycon01.png" alt="product: ps5 controller image" width="30px">
         </div>
         <div>
-        <p><U>Category</U> : <%= category %></p>
+          <p><U>Platform</U> : <%= plateform %></p>
         </div>
         <div>
-        <p><U>Availability</U> : <%= available %></p>
+          <p><U>Category</U> : <%= category %></p>
+        </div>
+        <div>
+          <p><U>Availability</U> : <%= available %></p>
         </div>
         <p class="m-0" style=margin-bottom:10px;> <I><%= "Provided by: " %><%= user.nickname %></I></p>
       </div>
       <div class="checkoutButton" style=background-color:var(--grey)>
-      <div class="priceTag">
-        <span>€</span><%= price %> <%= " / Day" %>
+        <div class="priceTag">
+          <span>€</span><%= price %> <%= " / Day" %>
+        </div>
+        <% if user_signed_in? && current_user != user %>
+          <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= title %>" data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
+            <p>Rent Now !</p>
+          </button>
+        <% end %>
       </div>
-      <% if user_signed_in? %>
-        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= title %>" data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
-          <p>Rent Now !</p>
-        </button>
-      <% end %>
     </div>
   </div>
 </div>
-    </div>
-    <%# <div class="productFeatures">
+<%# <div class="productFeatures">
               <div class="feature">
                 <div class="featureIcon">
                 </div>
