@@ -9,20 +9,22 @@
       </div>
     </div>
     <div class="productSpecifications" style=background-color:var(--grey)>
-      <h2 style=margin-bottom:15px;><%= title %></h2>
-      <div class="actions">
+      <div>
+        <h2 style=margin-bottom:15px;><%= title %></h2>
         <div class="productinfo">
           <div>
-            <p><U>Platform</U> : <%= plateform %></p>
+            <p class="m-0"><U>Platform</U> : <%= plateform %></p>
           </div>
           <div>
-            <p><U>Category</U> : <%= category %></p>
+            <p class="m-0"><U>Category</U> : <%= category %></p>
           </div>
           <div>
-            <p><U>Availability</U> : <%= available %></p>
+            <p class="m-0"><U>Availability</U> : <%= available %></p>
           </div>
           <p class="m-0" style=margin-bottom:10px;> <I><%= "Provided by: " %><%= user.nickname %></I></p>
         </div>
+      </div>
+      <div class="actions">
         <div class="checkoutButton" style=background-color:var(--grey)>
           <div class="priceTag">
             <span>€</span><%= price %> <%= " / Day" %>
