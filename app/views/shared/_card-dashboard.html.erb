@@ -1,16 +1,32 @@
-<div class="card-product">
-  <% if game.photo %>
-    <img src=<%= game.photo %> />
-  <% end %>
-  <div class="card-product-infos">
-    <h2><%= game.title %></h2>
-    <p><%= game.plateform %></p>
-    <p><%= game.price %>€ per day</p>
-    <%= link_to video_game_path(VideoGame.find_by(id: game.id)), method: :delete, data: {confirm: "Are you sure ?"} do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-    <%= link_to edit_video_game_path(VideoGame.find_by(id: game.id)) do %>
-      <i class="fas fa-edit"></i>
-    <% end %>
+<div class="wrapper-dashboard p-0">
+  <div class="overviewInfo-dashboard" style="background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2)),url(<%= game.photo %>);background-size: cover;background-position:center;">
+    <div class="productImage-dashboard">
+      <img src="https://www.eclypsia.com/content/Nintendo/Switch/joycon01.png" alt="product: ps5 controller image" width="30px">
+    </div>
+  </div>
+  <div class="productSpecifications-dashboard" style=background-color:var(--grey)>
+    <div class="">
+      <% if game.available %>
+        <p><span class="state state-valide"></span>Available</p>
+      <% else %>
+        <p><span class="state state-refused"></span>Rent at the moment</p>
+      <% end %>
+    </div>
+    <h2 style=margin-bottom:15px;><%= game.title %></h2>
+    <div class="productinfo-dashboard">
+      <div class="checkoutButton-dashboard" style=background-color:var(--grey)>
+        <div class="priceTag-dashboard">
+          <span>€</span><%= game.price %> <%= " / Day" %>
+        </div>
+      </div>
+    </div>
+    <div class ="icon-dashboard">
+      <%= link_to video_game_path(VideoGame.find_by(id: game.id)), style: "color:var(--duck)", method: :delete, data: {confirm: "Are you sure ?"} do %>
+        <i class="fas fa-trash-alt fa-lg ms-16"></i>
+      <% end %>
+      <%= link_to edit_video_game_path(VideoGame.find_by(id: game.id)), style: "color:var(--duck)" do %>
+        <i class="fas fa-edit fa-lg ms-16"></i>
+      <% end %>
+    </div>
   </div>
 </div>

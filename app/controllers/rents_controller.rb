@@ -16,6 +16,7 @@ class RentsController < ApplicationController
   def accept
     rent = Rent.find(params[:id])
     authorize rent
+    rent.video_game.update(available: false)
     rent.update(state: "Accepted")
     redirect_to dashboard_path
   end
