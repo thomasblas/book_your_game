@@ -1,9 +1,11 @@
-<h1>Create a new games</h1>
+<div class="mt-3">
+  <h1>Create a new games</h1>
+</div>
 <%= simple_form_for :video_game do |f| %>
   <%= f.input :title %>
-  <%= f.input :photo %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :category %>
   <%= f.input :plateform %>
-  <%= f.input :price %>
+  <%= f.input :price, as: :numeric %>
   <%= f.submit  %>
 <% end %>

@@ -1,31 +1,30 @@
 <div class="wrapper p-0">
-  <div class="overviewInfo" style="background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2)),url(<%= photo %>);background-size: cover;background-position:center;">
+  <div class="overviewInfo" style="background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2)),url(<%= video_game.photo %>);background-size: cover;background-position:center;">
   </div>
   <div class="productSpecifications" style=background-color:var(--grey)>
-    <h2 style=margin-bottom:15px;><%= title %></h2>
+    <h2 style=margin-bottom:15px;><%= video_game.title %></h2>
     <div class="actions">
-    
     <div class="productinfo">
       <div class="productImage">
-        <img src="https://www.eclypsia.com/content/Nintendo/Switch/joycon01.png" alt="product: ps5 controller image" width="30px">
+        <img  src= '<%= @joysticks[video_game.plateform]%>',  alt="", width="30px">
       </div>
         <div>
-        <p><U>Platform</U> : <%= plateform %></p>
+        <p><U>Platform</U> : <%= video_game.plateform %></p>
         </div>
         <div>
-        <p><U>Category</U> : <%= category %></p>
+        <p><U>Category</U> : <%= video_game.category %></p>
         </div>
         <div>
-        <p><U>Availability</U> : <%= available %></p>
+        <p><U>Availability</U> : <%= video_game.available %></p>
         </div>
-        <p class="m-0" style=margin-bottom:10px;> <I><%= "Provided by: " %><%= user.nickname %></I></p>
+        <p class="m-0" style=margin-bottom:10px;> <I><%= "Provided by: " %><%= video_game.user.nickname %></I></p>
       </div>
       <div class="checkoutButton" style=background-color:var(--grey)>
       <div class="priceTag">
-        <span>€</span><%= price %> <%= " / Day" %>
+        <span>€</span><%= video_game.price %> <%= " / Day" %>
       </div>
       <% if user_signed_in? %>
-        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= title %>" data-game-id=<%= id %> data-user-id=<%= current_user.id %>>
+        <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= video_game.title %>" data-game-id=<%= video_game.id %> data-user-id=<%= current_user.id %>>
           <p>Rent Now !</p>
         </button>
       <% end %>
@@ -33,7 +32,6 @@
   </div>
 </div>
     </div>
-
 <!-- Modal -->
 <div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -46,7 +44,7 @@
       </div>
       <% if user_signed_in? %>
         <div class="modal-body">
-          <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
+          <%= simple_form_for :rent, namespace: "card_#{video_game.id}", :url => new_rent_path do |f| %>
             <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
             <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
             <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
@@ -58,8 +56,24 @@
               </button>
             </div>
           <% end %>
+
         </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="modal-body">
+            <%= simple_form_for :rent, namespace: "card_#{id}", :url => new_rent_path do |f| %>
+              <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
+              <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
+              <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
+              <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
+              <div class="modal-footer">
+                <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                <button type="submit" class="preorder">
+                  <p>Rent Now !</p>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
