@@ -1,4 +1,5 @@
 const initModal = () => {
+  console.log("hello")
   $('#dateModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
     var title = button.data('game') // Extract info from data-* attributes

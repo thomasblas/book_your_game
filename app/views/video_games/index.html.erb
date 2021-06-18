@@ -1,9 +1,9 @@
 
 <div class="container">
-<h1>Choose your game</h1>
-<div class="row cards mb-3">
-<% @video_games.each do |video_game| %>
-  <%= render "shared/card", video_game: video_game %>
-<% end %>
-</div>
+  <h1>Choose your game</h1>
+  <div class="row cards mb-3">
+    <% @video_games.each do |video_game| %>
+    <%= render "shared/card", video_game: video_game %>
+    <% end %>
+  </div>
 </div>

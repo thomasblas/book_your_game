@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-
 .wrapper {
   width: 350px;
   border-radius: 40px;
@@ -7,8 +6,6 @@
   background-color: var(--dark);
   border: 1px solid var(--grey);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 .overviewInfo,
 .productSpecifications {
@@ -16,13 +13,11 @@
 }
 .overviewInfo {
   height: 324px;
-  position: relative;
 }
 .actions {
   // display: flex;
   justify-content: space-between;
-  // margin-bottom: 32px;
-
+  margin-bottom: 32px;
   .cartbutton {
     position: relative;
   }
@@ -37,7 +32,6 @@
     top: 11px;
     right: 8px;
   }
-
   .cartbutton svg {
     color: #ababab73;
   }
@@ -50,14 +44,12 @@
 }
 .neurobutton {
   background-image: var(--bg-shape-color);
-
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: inset 3px 4px 5px 0px rgba(197, 197, 197, 0.1), inset 3px 6px 6px 5px rgba(78, 77, 77, 0.1),
     -2px -2px 8px 2px rgba(255, 255, 255, 0.1), 2px 2px 6px 3px rgba(0, 0, 0, 0.4);
 }
-
 .productinfo {
   display: flex;
   flex-direction: column;
@@ -66,15 +58,13 @@
   min-height: 150px;
   // margin-bottom: 50px;
 }
-
 .productImage {
   position: absolute;
   width: 100px;
   height: auto;
-  top: 250px;
-  right: 20px;
+  top: -140px;
+  right: -30px;
   overflow: visible;
-
   // transform: rotate(-90deg) translate(-56px, 66px);
   // animation: updowncontroller infinite 3s alternate;
   img {
@@ -88,31 +78,26 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
-
   @keyframes shake {
     10%,
     90% {
       transform: translate3d(-1px, 0, 0);
     }
-
     20%,
     80% {
       transform: translate3d(2px, 0, 0);
     }
-
     30%,
     50%,
     70% {
       transform: translate3d(-4px, 0, 0);
     }
-
     40%,
     60% {
       transform: translate3d(4px, 0, 0);
     }
   }
 }
-
 h1 {
   font-family: "Michroma", sans-serif;
 }
@@ -128,7 +113,6 @@ h1 {
     opacity: 0.8;
   }
 }
-
 /* product specifications */
 .featureIcon {
   width: 40px;
@@ -138,22 +122,16 @@ h1 {
   margin-right: 16px;
 }
 .productSpecifications {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   h1 {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 12px;
   }
-
   p {
     opacity: 0.8;
     font-size: auto;
     line-height: 1.5;
   }
-
   .productFeatures {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -164,7 +142,6 @@ h1 {
     }
   }
 }
-
 .checkoutButton {
   display: flex;
   width: 100%;
@@ -179,19 +156,16 @@ h1 {
   align-items: center;
   border: 1px var(--dark);
 }
-
 .priceTag {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 32px;
 }
-
 .priceTag span {
   color: var(--duck);
   font-size: 25px;
   margin-right: 5px;
 }
-
 /* checkout button*/
 button.preorder {
   outline: 0;
@@ -200,17 +174,15 @@ button.preorder {
   display: flex;
   align-items: center;
   overflow: hidden;
-  // background-image: linear-gradient(85deg, #61c7ef, #4833fb);
+  // background-image: linear-gradient(85deg, #61C7EF, #4833FB);
   background-image: linear-gradient(85deg, var(--duck), var(--dark));
   color: white;
   opacity: 0.8;
 }
-
 .preorder:hover {
   opacity: 1;
   // font-weight: bolder;
 }
-
 .preorder {
   display: inline-block !important;
   outline: 0;
@@ -220,7 +192,7 @@ button.preorder {
   align-items: center;
   padding: 10px 20px;
   overflow: hidden;
-  // background-image: linear-gradient(85deg, #61c7ef, #4833fb);
+  // background-image: linear-gradient(85deg, #61C7EF, #4833FB);
   background-image: linear-gradient(85deg, var(--duck), var(--grey));
   color: white;
   &:hover {
@@ -228,13 +200,11 @@ button.preorder {
     text-decoration: none;
   }
 }
-
 .preorder p {
   margin: 0;
   // padding: 8px 17px;
   // border-right: 1px solid rgba(0, 0, 0, 0.4);
 }
-
 .buttonaction {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding: 5px 5px;
@@ -243,9 +213,7 @@ button.preorder {
   justify-content: center;
   color: rgba(255, 255, 255, 0.7);
 }
-
 /* animation */
-
 @keyframes updowncontroller {
   0% {
     transform: rotate(-90deg) translate(-56px, 66px);

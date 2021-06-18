@@ -23,7 +23,7 @@
       <div class="priceTag">
         <span>€</span><%= video_game.price %> <%= " / Day" %>
       </div>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user != video_game.user %>
         <button type="button" class="preorder" data-toggle="modal" data-target="#dateModal" data-game="<%= video_game.title %>" data-game-id=<%= video_game.id %> data-user-id=<%= current_user.id %>>
           <p>Rent Now !</p>
         </button>
@@ -42,22 +42,22 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <% if user_signed_in? %>
-        <div class="modal-body">
-          <%= simple_form_for :rent, namespace: "card_#{video_game.id}", :url => new_rent_path do |f| %>
-            <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
-            <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
-            <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
-            <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
-            <div class="modal-footer">
-              <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
-              <button type="submit" class="preorder">
-                <p>Rent Now !</p>
-              </button>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+       <% if user_signed_in? %>
+          <div class="modal-body">
+            <%= simple_form_for :rent, namespace: "card_#{video_game.id}", :url => new_rent_path do |f| %>
+              <%= f.input :video_game_id, :as => :hidden, input_html: {class: "game-id"} %>
+              <%= f.input :user_id, :as => :hidden, input_html: {class: "user-id"} %>
+              <%= f.input :rent_start_at, as: :string, required: true, input_html: {class: "rent_start_at"} %>
+              <%= f.input :rent_end_at, as: :string, required: true, input_html: {class: "rent_end_at"} %>
+              <div class="modal-footer">
+                <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                <button type="submit" class="preorder">
+                  <p>Rent Now !</p>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
