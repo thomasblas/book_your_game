@@ -27,6 +27,7 @@ import "bootstrap";
 import { initToast } from '../components/init_toast';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initModal } from "../components/modal"
+import { initSearch } from "../components/init_search"
 
 
 // Internal imports, e.g:
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initToast();
   initModal();
+  initSearch();
 });

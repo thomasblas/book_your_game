@@ -1,4 +1,10 @@
 <h1>Create a new games</h1>
+<div class="input-group">
+  <div class="form-outline">
+    <input type="search" id="search-game" class="form-control" value="Coucou" />
+    <label class="form-label" for="form1">Search a game</label>
+  </div>
+</div>
 <%= simple_form_for :video_game do |f| %>
   <%= f.input :title %>
   <%= f.input :photo %>
